@@ -17,7 +17,7 @@ int main (int argc, char **argv)
   }
 
   // open first time
-  system(buff);
+  /* system(buff); */
 
   // get num of iterations
   int num = 5;
