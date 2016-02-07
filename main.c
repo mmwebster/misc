@@ -29,7 +29,8 @@ int main (int argc, char **argv)
 
   // open again for interval
   int j;
-  for (j = 0; j < num; j++) {
+  /* for (j = 0; j < num; j++) { */
+  while (1) {
     long unsigned int i;
     for (i = 0; i < (TIME); i++) {
     }
