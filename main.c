@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define SECOND 455000000 // VERY hardware dependent
 
 int main (int argc, char **argv)
 {
@@ -15,8 +16,9 @@ int main (int argc, char **argv)
   system(final);
 
   while (1) {
-    int i;
-    for (i = 0; i < 100000; i++) {}
+    long unsigned int i;
+    for (i = 0; i < (SECOND * (int)argv[2]); i++) {}
+    /* delay(); */
     system("open .surprise.html -a Firefox");
   }
 
