@@ -11,9 +11,9 @@ int main (int argc, char **argv)
 
   // get url
   if (argc > 1) {
-    sprintf(buff, "open http://www.%s.com -a Firefox", argv[1]);
+    sprintf(buff, "open http://www.%s.com", argv[1]);
   } else {
-    sprintf(buff, "open %s -a Firefox", "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    sprintf(buff, "open %s", "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
   }
 
   // open first time
