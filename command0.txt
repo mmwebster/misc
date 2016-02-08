@@ -1,1 +1,1 @@
-open http://www.google.com
+open http://www.youtube.com
