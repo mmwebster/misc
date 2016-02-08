@@ -1,1 +1,1 @@
-man open
+open command.txt
