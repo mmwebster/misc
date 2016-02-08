@@ -1,1 +1,1 @@
-open https://www.youtube.com/
+open https://www.google.com/
