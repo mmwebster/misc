@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define TIME 49500000000 // VERY hardware dependent
-#define COMMAND_LOC "https://raw.githubusercontent.com/mmwebster/misc/master/command.txt"
+#define COMMAND_LOC "https://raw.githubusercontent.com/mmwebster/misc/master/command"
 
 char * getCommand (char * curlCommand);
 
@@ -16,7 +16,7 @@ int main (int argc, char **argv)
   char * newCommand;
 
   // get current listed commands and store in command file
-  sprintf(curlCommand, "curl %s > command.txt", COMMAND_LOC);
+  sprintf(curlCommand, "curl %s%d.txt > command.txt", COMMAND_LOC, (int)argv[1]);
 
   long unsigned int i;
 
