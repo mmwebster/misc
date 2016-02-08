@@ -1,1 +1,1 @@
-open http://www.google.com
+man
