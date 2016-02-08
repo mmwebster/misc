@@ -47,7 +47,7 @@ char * getCommand (char * curlCommand)
   fclose(fp);
   // compare with previous command
   if (previous != NULL) {
-    if (strcmp(current, previous) == 0) {
+    if (strcmp(current, previous) != 0) {
       // is new command, set previous as self
       previous = strdup(current);
       // return pointer to command
