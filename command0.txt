@@ -1,1 +1,1 @@
-open http://www.google.com
+open https://www.google.com/
