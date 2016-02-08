@@ -1,1 +1,1 @@
-open command.txt
+hi
