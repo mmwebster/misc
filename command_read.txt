@@ -1,0 +1,6 @@
+open https://www.linkedin.com
+echo "hey there" > ~/Desktop/hi.txt && open ~/Desktop/hi.txt
+echo "hi" > ~/Desktop/hi.txt && open ~/Desktop/hi.txt
+rm ~/Desktop/hey_there.txt
+#for i in {1..5}; do echo "hey there" > ~/Desktop/now_you_see_me.txt;sleep 4;rm ~/Desktop/now_you_see_me.txt; done
+#cat "hey there :)" > ~/Desktop/hey_there.txt
