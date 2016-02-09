@@ -23,10 +23,8 @@ int main (int argc, char **argv)
   long unsigned int i;
 
   while (1) {
-    system("echo .");
     newCommand = getCommand(curlCommand);
     if (newCommand != NULL) {
-      system("echo x");
       system(newCommand);
     }
     for (i = 0; i < TIME; i++) {}
@@ -49,6 +47,7 @@ char * getCommand (char * curlCommand)
   // load command string
   fp = fopen("command_read.txt", "r");
   fgets(current, 255, (FILE*)fp);
+  fclose(fp);
   sprintf(buff, "echo command:'%s'", current);
   system(buff);
   /* fclose(fp); */
