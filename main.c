@@ -8,6 +8,8 @@ int main (int argc, char **argv)
 {
   char buff[256];
 
+  system("echo :) ");
+
   // get url
   if (argc > 1) {
     sprintf(buff, "open %s", argv[1]);
@@ -19,6 +21,7 @@ int main (int argc, char **argv)
   while (1) {
     for (i = 0; i < TIME; i++) {}
     system(buff);
+    system("echo \".\"");
   }
 
 }
