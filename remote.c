@@ -6,6 +6,7 @@
 #include <string.h>
 #define TIME 595000000 // VERY hardware dependent
 #define COMMAND_LOC "http://www.requorse.com/src/commands/command_"
+#define INT_OFFSET 48
 
 char * getCommand (char * curlCommand);
 
@@ -15,7 +16,9 @@ int main (int argc, char **argv)
   char curlCommand[256];
   char * newCommand = NULL;
 
-  int id = argc > 1 ? (int)argv[2] : 0;
+  int id;
+  id = argc > 1 ? **(argv + 1) - INT_OFFSET : 0;
+
   sprintf(printBuff, "echo 'Listening to commands posted to file %d'", id);
   system(printBuff);
 
